@@ -10,6 +10,8 @@ public class Program
         Person person = new Person();
         person.SetName("Mr.", "Mason", "Cockrum");
         person.DisplayFullName();
+
+        Print.HelloWorld();
     }
     
 }
