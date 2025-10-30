@@ -24,7 +24,7 @@ class Program
 
 // notes
 // When I decided to do this assignment, I made the choice to actually go through the readings and follow the steps, asking AI for clarification anytime I got confused.
-// Instead of rushing to get the assignment done, I actually gave it the time to read through all the material and let it soak in.
+// Instead of rushing to get the assignment done, I actually gave it the time to read through all the material and let it sink in.
 // turns out the curriculum for this class is really good, and it's the students fault for not actually following it LOL WOOPSEE
 
 // A fact I heard is that the ideal amount of time to study for school is the number of credits you're taking, multiplied by 2 or 3.
