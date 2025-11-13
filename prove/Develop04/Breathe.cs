@@ -11,9 +11,9 @@ public class Breathe : Activity
         //call animation
         Animation();
         //countdown
-        Console.Write($"Breathe in for: "); CountDown();
-        Console.Write($"Hold your breath for: "); CountDown();
-        Console.Write($"Breathe out for: "); CountDown();
+        Console.Write($"Breathe in for: "); CountDown(); Console.WriteLine();
+        Console.Write($"Hold your breath for: "); CountDown(); Console.WriteLine();
+        Console.Write($"Breathe out for: "); CountDown(); Console.WriteLine();
         //ending message
         DisplayEnd();
     }
