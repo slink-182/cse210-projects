@@ -7,14 +7,14 @@ public class Breathe : Activity
 
     public void BreatheCycle()
     {
-        int _duration = GetDuration();
-        for (int i = _duration; i > 0; i--)
-        {
-            Console.Write(i);
-            Thread.Sleep(1000);
-            Console.Write("\b \b");
-        }
-
-        Console.WriteLine("done.");
+        DisplayStart();
+        //call animation
+        Animation();
+        //countdown
+        Console.Write($"Breathe in for: "); CountDown();
+        Console.Write($"Hold your breath for: "); CountDown();
+        Console.Write($"Breathe out for: "); CountDown();
+        //ending message
+        DisplayEnd();
     }
 }

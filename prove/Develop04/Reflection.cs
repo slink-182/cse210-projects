@@ -16,12 +16,20 @@ public class Reflection : Activity
         _questionList = question;
     }
     // set methods
-    public void DisplayPrompt()
+    public void DisplayReflection()
     {
+        DisplayStart();
+        Animation();
+        Console.WriteLine("Consider the following prompt:");
+        for (int i = 0; i < _promptList.Count; i++)
+        {
+            string _currentPrompt = _promptList[i];
+            Console.Write($"--==-- {_currentPrompt} --==-- ");
+            Animation(); Console.WriteLine();
+            
+        }
+        DisplayEnd();
+    }
 
-    }
-    public void DisplayQuestion()
-    {
-        
-    }
+    
 }
