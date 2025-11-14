@@ -19,10 +19,9 @@ public abstract class Shape
 
     public void SetColor(string color)
     {
-        //asdf
-        Console.Write("What color is your shape? ");
-        string _color = Console.ReadLine();
-        
+        //asdfgh
+        string _color = color;
+
 
     }
 
