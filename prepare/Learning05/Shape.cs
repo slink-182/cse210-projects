@@ -17,14 +17,13 @@ public abstract class Shape
         return _color;
     }
 
-    public void SetColor(string color)
-    {
-        //asdfgh
-        string _color = color;
-
-
-    }
-
+    // public void SetColor(string color)
+    // {
+    //     _color = color;
+    // }
     public abstract double GetArea();
-
+    
 }
+
+// notes
+//I don't understand why we have a SetColor() method when it isn't used in program.cs, or anywhere else in this project.
