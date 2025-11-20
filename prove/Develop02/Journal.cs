@@ -1,44 +1,27 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
+using System.Runtime.CompilerServices;
 
-class Journal
+public class Journal
 {
-    private List<Entry> Entries = new List<Entry>();
-    public void AddEntry(Entry entry)
+    //attributes
+    private List<string> _promptList;
+    private List<string> _answerList;
+    
+    public Journal(List<string> prompt, List<string> answer)
     {
-        Entries.Add(entry);
+        _promptList = prompt;
+        _answerList = answer;
     }
 
-    public void DisplayAll()
+    public void DisplayJournal()
     {
-        foreach (Entry e in Entries)
+        for (int i = 0; i < _promptList.Count; i++)
         {
-            e.Display();
-            Console.WriteLine();
+            Console.WriteLine(_promptList[i]);
+            Console.WriteLine(_answerList[i]);
+            Console.WriteLine(); 
         }
-    }
-    public void SaveToFile(string filename)
-    {
-        using (StreamWriter writer = new StreamWriter(filename))
-        {
-            foreach (Entry e in Entries)
-            {
-                writer.WriteLine(e.ToFileString());
-            }
-        }
+        
+        
     }
 
-   public void LoadFromFile(string filename)
-    {
-        Entries.Clear();
-        foreach (string line in File.ReadAllLines(filename))
-        {
-            string[] parts = line.Split('|');
-            if (parts.Length == 3)
-            {
-                Entries.Add(new Entry(parts[0], parts[1], parts[2]));
-            }
-        }
-    }
 }

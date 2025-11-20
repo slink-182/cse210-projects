@@ -1,61 +1,55 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks.Dataflow;
 
 class Program
 {
-    static void Main()
+    static void Main(string[] args)
     {
-        Journal journal = new Journal();
-        List<string> prompts = new List<string>
+        List<string> _promptList = new List<string>
         {
-            "Who was the most interesting person I interacted with today?",
-            "What was the best part of my day?",
-            "How did I see the hand of the Lord in my life today?",
-            "What was the strongest emotion I felt today?",
-            "If I had one thing I could do over today, what would it be?"
+        "Who was the most interesting person I interacted with today?",
+        "What was the best part of my day?",
+        "How did I see the hand of the Lord in my life today?",
+        "What was the strongest emotion I felt today?",
+        "If I had one thing I could do over today, what would it be?"
         };
+        List<string> _answerList = new List<string>();
 
-        bool running = true;
+        
+        bool running = true; //make sure the display menu continues to loop until user asks to quit
         while (running)
         {
-            Console.WriteLine("Menu:\n1. Write New Entry\n2. Display Journal\n3. Save Journal\n4. Load Journal\n5. Quit");
-            string choice = Console.ReadLine();
+            Console.Write("Welcome to the Journal Program!\nPlease select one of the following options:\n1. Write\n2. Display\n3. Load\n4. Save\n5. Quit\nchoose an option: ");
+            string _userInput = Console.ReadLine();
 
-            if (choice == "1")
+            if (_userInput == "1") //write
             {
-                string prompt = prompts[new Random().Next(prompts.Count)];
-                Console.WriteLine(prompt);
-                string response = Console.ReadLine();
-                string date = DateTime.Now.ToString("MM/dd/yyyy");
-                Entry entry = new Entry(date, prompt, response);
-                journal.AddEntry(entry);
-            }
-            else if (choice == "2")
+                foreach (string prompt in _promptList)
+                {
+                Console.Write($"{prompt}\n> ");
+                string _answer = Console.ReadLine();
+                _answerList.Add(_answer);
+                }
+                
+            } else if (_userInput == "2") //display
             {
-                journal.DisplayAll();
-            }
-            else if (choice == "3")
+                
+            } else if (_userInput == "3") //load
             {
-                Console.Write("Enter filename to save: ");
-                string saveFile = Console.ReadLine();
-                journal.SaveToFile(saveFile);
-            }
-            else if (choice == "4")
+                
+            } else if (_userInput == "4") //save
             {
-                Console.Write("Enter filename to load: ");
-                string loadFile = Console.ReadLine();
-                journal.LoadFromFile(loadFile);
-            }
-            else if (choice == "5")
+                
+            } else if (_userInput == "5") //quit
             {
-                running = false;
+                
             }
-            else
-            {
-                Console.WriteLine("Invalid choice.");
-            }
-
-            Console.WriteLine();
         }
+    
+    
     }
+
+
 }
+

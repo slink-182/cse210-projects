@@ -1,23 +1,28 @@
-class Entry
+using System.Runtime.CompilerServices;
+
+public class Entry
 {
-    private string _date;
-    private string _prompt;
-    private string _response;
+    //attributes
+    private List<string> _promptList;
+    private List<string> _answerList;
 
-    public Entry(string date, string prompt, string response)
+    public Entry(List<string> prom, List<string> answer)
     {
-        _date = date;
-        _prompt = prompt;
-        _response = response;
-
+        _promptList = prom;
+        _answerList = answer;
     }
 
-    public void Display()
+    public void DisplayPrompt()
     {
-        Console.WriteLine($"{_date} - {_prompt}: {_response}");
+        
     }
-    public string ToFileString()
+    
+    public static void Save()
     {
-        return $"{_date} | {_prompt} | {_response}";
+        
+    }
+    public static void Load()
+    {
+        
     }
 }
