@@ -6,6 +6,7 @@ public class Checklist : Goal
     public Checklist(string name, int value, int total) : base(name,value,total)
     {
         
+
     }
 
     //methods

@@ -6,13 +6,20 @@ public class Simple : Goal
     public Simple(bool complete, string goalName, int goalValue, int pointTotal) : base(goalName, goalValue, pointTotal)
     {
         _complete = complete;
+        
     }
 
     //methods
+
+    public void GrabName(Goal p)
+    {
+        string name = p.GetGoalName();
+    }
+
+
     public override void SetGoal()
     {
-        // string _goalName = goalName;
-        // return _goalName;
+        
         
     }
     public override void UpdateGoal()
@@ -21,6 +28,11 @@ public class Simple : Goal
         string _answer = Console.ReadLine();
 
 
+    }
+
+    public void Display()
+    {
+        Console.WriteLine($"goal: {}");
     }
 
 }

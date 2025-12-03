@@ -14,6 +14,16 @@ public abstract class Goal
     }
 
     //methods
-    public abstract  void SetGoal(); //this would allow the user to set up the goals name and point value
+    public abstract void SetGoal();//this would allow the user to set up the goals name and point value
     public abstract void UpdateGoal(); //this would allow the user to update the system on their progress on a goal
+
+    public string GetGoalName() //return the goal name that the user input
+    {
+        return _goalName;
+    }
+    public int GetGoalValue() //return the goal value that the user input
+    {
+        return _goalValue;
+    }
+
 }
