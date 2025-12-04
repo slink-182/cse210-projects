@@ -1,26 +1,28 @@
 public class Customer
 {
     private string _name;
-    private string _address;
+    private Address _address;
 
-    public Customer(string name, string address)
+    public Customer(string name, Address address)
     {
         _name = name;
         _address = address;
     }
 
-    //methods
-    // public bool IsAmerican() //LOL
-    // {
-    //     if (_address == "USA" || _address == "American" || _address == "United States")
-    //     {
-    //         return true;
-            
-    //     }
-    //     else
-    //     {
-    //         return false;
-    //     }
-    // }
+    public bool IsAmerican()
+    {
+        return _address.IsAmerican();
+    }
+    public string GetName()
+    {
+        return _name;
+    }
+
+    public Address GetAddress()
+    {
+        return _address;
+    }
+   
+
 
 }
