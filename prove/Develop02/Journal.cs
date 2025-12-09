@@ -51,7 +51,7 @@ public class Journal
 
     public void FileSave()
     {
-        Console.Write("enter file name to save to\n> ");
+        Console.Write("enter filename to save\n> ");
         string filename = Console.ReadLine();
 
         // Loop through each entry and write its data to the file
