@@ -1,28 +1,34 @@
-using System.Runtime.CompilerServices;
-
 public class Entry
 {
-    //attributes
-    private List<string> _promptList;
-    private List<string> _answerList;
+    private string _date;
+    private string _prompt;
+    private string _userInput;
 
-    public Entry(List<string> prom, List<string> answer)
+    public Entry(string date, string prompt, string userInput)
     {
-        _promptList = prom;
-        _answerList = answer;
+        _date = date;
+        _prompt = prompt;
+        _userInput = userInput;
     }
 
-    public void DisplayPrompt()
+    //get the full entry with date, prompt, and user response
+    public string GetEntry()
     {
-        
+        return $"{_date} // {_prompt}: {_userInput}";
     }
-    
-    public static void Save()
+
+
+    //get the individual attributes because we can
+    public string GetDate()
     {
-        
+        return $"{_date}";
     }
-    public static void Load()
+    public string GetPrompt()
     {
-        
+        return $"{_prompt}";
+    }
+    public string GetUserInput()
+    {
+        return $"{_userInput}";
     }
 }
