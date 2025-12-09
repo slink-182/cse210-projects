@@ -1,32 +1,17 @@
-using System;
-
-class Word
+public class Word
 {
-    private string _text;
-    private bool _isHidden = false;
-    public bool IsHidden()
-    {
-        return _isHidden;
-    }
+    private string _word;
+    private bool _hide;
 
     public Word(string word)
     {
-        _text = word;
-        _isHidden = false;
+        
     }
-    public void Hide()
+
+    //methods
+    public void Replace()
     {
-        _isHidden = true;
+        _hide = true;
     }
-    public string Display()
-    {
-        if (_isHidden)
-        {
-            return new string('_', _text.Length);
-        }
-        else
-        {
-            return _text;
-        }
-    }
+
 }
