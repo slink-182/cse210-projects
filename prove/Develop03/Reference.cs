@@ -11,9 +11,16 @@ public class Reference
         _chapter = chapter;
         _verseStart = start;
         _verseEnd = end;
-
     }
-
-    
-
+    public string GetReferenceText()
+    {
+        if (_verseStart == _verseEnd)
+        {
+            return $"{_book} {_chapter}:{_verseStart}";
+        }
+        else
+        {
+            return $"{_book} {_chapter}:{_verseStart}-{_verseEnd}";
+        }
+    }
 }
