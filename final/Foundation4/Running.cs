@@ -9,11 +9,11 @@ public class Running : Activity
         _distance = distance;
     }
 
-    public override void GetSummary()
+    public override string GetSummary()
     {
         string name = "running";
         
-        Console.WriteLine( $"{name} | {base.GetDate()} distance: {_distance} total of {base.GetLengthInMin()}min");
+        return $"{name} | {base.GetDate()} distance: {_distance} total of {base.GetLengthInMin()}min";
     }
 
 }

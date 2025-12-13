@@ -10,7 +10,7 @@ public abstract class Activity
     }
 
     //methods
-    public abstract void GetSummary(); //return a string of the summary of all the information
+    public abstract string GetSummary(); //return a string of the summary of all the information
 
     //getters
     public string GetDate()

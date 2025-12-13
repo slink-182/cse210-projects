@@ -5,18 +5,18 @@ class Program
     static void Main(string[] args)
     {
         //polymorphism project
-        
-        //running
-        Running run1 = new Running(15,"12/12/2025",25);
-        run1.GetSummary();
+        List<Activity> _activities = new List<Activity>
+        {
+            new Running(15,"12/12/2025",25),
+            new Cycling(80,"12/13/2025",10),
+            new Swimming(8,"12/14/2025",35)
+        };
 
-        //cycling
-        Cycling cyc1 = new Cycling(80,"12/13/2025",10);
-        cyc1.GetSummary();
+        foreach (Activity a in _activities)
+        {
+            Console.WriteLine(a.GetSummary());
 
-        //swimming
-        Swimming swi1 = new Swimming(8,"12/14/2025",35);
-        swi1.GetSummary();
+        }
 
 
     }

@@ -8,10 +8,10 @@ public class Cycling : Activity
     }
 
     //methods
-    public override void GetSummary()
+    public override string GetSummary()
     {
         string name = "cycling";
         
-        Console.WriteLine($"{name} | {base.GetDate()} speed: {_speed} for a total of {base.GetLengthInMin()}min");
+        return $"{name} | {base.GetDate()} speed: {_speed} for a total of {base.GetLengthInMin()}min";
     }
 }

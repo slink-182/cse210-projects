@@ -9,11 +9,11 @@ public class Swimming : Activity
         _lapCount = lapc;
     }
 
-    public override void GetSummary()
+    public override string GetSummary()
     {
         string name = "swimming";
         
-        Console.WriteLine($"{name} | {base.GetDate()} swam: {_lapCount} laps for a total of {base.GetLengthInMin()}min");
+        return $"{name} | {base.GetDate()} swam: {_lapCount} laps for a total of {base.GetLengthInMin()}min";
 
 
     }
