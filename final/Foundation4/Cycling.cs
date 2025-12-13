@@ -25,6 +25,6 @@ public class Cycling : Activity
     //print the GetSummary method to return all the calculations for cycling
     public override string GetSummary()
     {
-        return $"{base.GetDate()} {GetActivityName()} ({base.GetMinutes()} min) - distance {GetDistance():00.00}, speed {GetSpeed():00.00} mph, pace: {GetPace():00.00} min per mile";
+        return $"{GetDate()} {GetActivityName()} ({GetMinutes()} min) - distance {GetDistance():00.00}, speed {GetSpeed():00.00} mph, pace: {GetPace():00.00} min per mile";
     }
 }
