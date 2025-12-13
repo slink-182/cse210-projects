@@ -1,19 +1,33 @@
-using System.Runtime.InteropServices;
-
 public class Running : Activity
 {
-    private float _distance;
+    private double _distance;
 
-    public Running(float distance, string date, int lengthmin) : base(date, lengthmin)
+    public Running(double dist, string date, int min) : base(date, min)
     {
-        _distance = distance;
+        _distance = dist;
     }
 
+    public override string GetActivityName()
+    {
+        return "running";
+    }
+    public override double GetDistance()
+    {
+        return _distance;
+    }
+    public override double GetSpeed()
+    {
+        return _distance / base.GetMinutes() * 60;
+    }
+    public override double GetPace()
+    {
+        return 60 / GetSpeed();
+    }
+
+    //print the GetSummary method to return all the calculations for running
     public override string GetSummary()
     {
-        string name = "running";
-        
-        return $"{name} | {base.GetDate()} distance: {_distance} total of {base.GetLengthInMin()}min";
+        return $"{base.GetDate()} {GetActivityName()} ({base.GetMinutes()} min)- distance {GetDistance()}, speed {GetSpeed()} mph, pace: {GetPace()} min per mile";
     }
 
 }

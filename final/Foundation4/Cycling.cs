@@ -1,17 +1,30 @@
 public class Cycling : Activity
 {
-    private float _speed;
-
-    public Cycling(float speed, string date, int lengthmin) : base(date, lengthmin)
+    private double _speed;
+    public Cycling(double speed, string date, int min) : base(date, min)
     {
         _speed = speed;
     }
+    public override string GetActivityName()
+    {
+        return "cycling";
+    }
+    public override double GetPace()
+    {
+        return 60 / _speed;
+    }
+    public override double GetDistance()
+    {
+        return 60 / GetPace();
+    }
+    public override double GetSpeed()
+    {
+        return _speed;
+    }
 
-    //methods
+    //print the GetSummary method to return all the calculations for cycling
     public override string GetSummary()
     {
-        string name = "cycling";
-        
-        return $"{name} | {base.GetDate()} speed: {_speed} for a total of {base.GetLengthInMin()}min";
+        return $"{base.GetDate()} {GetActivityName()} ({base.GetMinutes()} min)- distance {GetDistance()}, speed {GetSpeed()} mph, pace: {GetPace()} min per mile";
     }
 }
