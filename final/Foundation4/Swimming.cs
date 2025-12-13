@@ -2,8 +2,8 @@ using System.Runtime.InteropServices;
 
 public class Swimming : Activity
 {
-    private int _lapCount;
-    public Swimming(int laps, string date, int min) : base(date, min)
+    private double _lapCount;
+    public Swimming(double laps, string date, int min) : base(date, min)
     {
         _lapCount = laps;
     }
@@ -13,20 +13,20 @@ public class Swimming : Activity
     }
     public override double GetDistance()
     {
-        return _lapCount * 50 / 1000 * 0.62;
+        return _lapCount * 50.0;
     }
-    public override double GetSpeed()
+    public override double GetSpeed()//we're going to keep the data in meters format for swimming
     {
-        return GetDistance() / GetMinutes() * 60;
+        return GetDistance() / GetMinutes();
     }
     public override double GetPace()
     {
-        return 60 / GetSpeed();
+        return GetMinutes() / _lapCount;//minutes per lap
     }
 
     //return summary
     public override string GetSummary()
     {        
-        return $"{base.GetDate()} {GetActivityName()} ({base.GetMinutes()} min)- {_lapCount} laps, distance: {GetDistance()} miles, speed: {GetSpeed()} mph, pace: {GetPace()}";
+        return $"{GetDate()} {GetActivityName()} ({GetMinutes()} min) - {_lapCount} laps, distance: {GetDistance():0.00} meters, speed: {GetSpeed():0.00} m/min, pace: {GetPace():0.00} min/lap";
     }
 }
